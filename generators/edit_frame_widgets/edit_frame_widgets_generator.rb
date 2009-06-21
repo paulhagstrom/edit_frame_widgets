@@ -24,13 +24,13 @@ class EditFrameWidgetsGenerator < ControllerGenerator
       end
 
       # Views
-      m.template 'detail.html.rb', File.join('app/cells', class_path, file_name, "_detail.html.rb")
-      m.template 'frame.html.rb', File.join('app/cells', class_path, file_name, "_frame.html.rb")
-      m.template 'list.html.rb', File.join('app/cells', class_path, file_name, "_list.html.rb")
+      m.template 'detail.html.rb', File.join('app/cells', class_path, file_name, "_detail.html.erb")
+      m.template 'frame.html.rb', File.join('app/cells', class_path, file_name, "_frame.html.erb")
+      m.template 'list.html.rb', File.join('app/cells', class_path, file_name, "_list.html.erb")
       # Common views
-      m.template 'filter.html.rb', File.join('app/cells', class_path, 'edit_frame_widgets', "_filter.html.rb")
-      m.template 'message.html.rb', File.join('app/cells', class_path, 'edit_frame_widgets', "_message.html.rb")
-      m.template 'selected.html.rb', File.join('app/cells', class_path, 'edit_frame_widgets', "_selected.html.rb")
+      m.template 'filter.html.rb', File.join('app/cells', class_path, 'edit_frame_widgets', "_filter.html.erb")
+      m.template 'message.html.rb', File.join('app/cells', class_path, 'edit_frame_widgets', "_message.html.erb")
+      m.template 'selected.html.rb', File.join('app/cells', class_path, 'edit_frame_widgets', "_selected.html.erb")
       
       # # View template for each state.
       # actions.each do |action|
