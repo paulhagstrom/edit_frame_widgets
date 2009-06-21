@@ -12,6 +12,7 @@ class EditFrameWidgetsGenerator < ControllerGenerator
       # Directories
       m.directory File.join('app/cells', class_path)
       m.directory File.join('app/cells', class_path, file_name)
+      m.directory File.join('app/cells', class_path, 'edit_frame_widgets')
       
       # Widget tree
       m.template 'edit_frame_widget_tree.rb', File.join('app/models', "application_widget_tree.rb")
