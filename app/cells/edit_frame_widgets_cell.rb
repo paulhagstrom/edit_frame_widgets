@@ -1,6 +1,7 @@
 # I don't completely understand why this is not in a module.
 # If I put it in a module, things go haywire.
 # I need to figure out how plugins work.  And how Ruby works, for that matter.
+# I am curious to see if I can commmit the submodule within the example app.  This is a pointless little change.
 
   class EditFrameWidgetsCell < Apotomo::StatefulWidget
     include Apotomo::EventAware
