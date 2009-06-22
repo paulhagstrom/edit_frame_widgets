@@ -1,33 +1,42 @@
+<!--
+	This needs to be edited significantly for the specific configuration.
+	It is an example of a child widget's display.  I have wrapped things
+	that might pop in and out in divs that are referred to in the hud_panels
+	definition.  If you don't define any HUDs, you'll want to change the
+	display:none to display:block on each of these divs.
+	Below, the list and filter are wrapped together so that they are
+	displayed and hidden together.
+-->
 <table width="100%">
 	<tr>
 		<td valign="top">
-			<div id = "div_publisher_detail" style="display:none;">
-				<%= @rendered_children['publisher_detail'] %>
+			<div id = "div_child_detail" style="display:none;">
+				<%#= @rendered_children['child_detail'] %>
 			</div>
 		</td>
 	</tr>
 	<tr>
 		<td valign="top">
-			<div id = "div_publisher_message" style="display:block;">
-				<%= @rendered_children['publisher_message'] %>
+			<div id = "div_child_message" style="display:block;">
+				<%#= @rendered_children['child_message'] %>
 			</div>
 		</td>
 	</tr>
 	<tr>
 		<td valign="top">
-			<div id = "div_publisher_list_panels" style="display:block;">
+			<div id = "div_child_list_panels" style="display:block;">
 				<table width="100%">
 					<tr>
 						<td>
-							<div id = "div_publisher_filter" style="display:block;">
-								<%= @rendered_children['publisher_filter'] %>
+							<div id = "div_child_filter" style="display:block;">
+								<%#= @rendered_children['child_filter'] %>
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<td valign="top">
 							<div id = "div_publisher_list" style="display:block;">
-								<%= @rendered_children['publisher_list'] %>
+								<%#= @rendered_children['child_list'] %>
 							</div>
 						</td>
 					</tr>

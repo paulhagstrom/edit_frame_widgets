@@ -1,9 +1,9 @@
-# This is just taken from Apotomo's generator.  I still use the controller generator
-# though I don't allow the specification of actions.  I use the first action specified to indicate
-# whether it is a child panel or a parent panel
+# This is kind of hacky.  I use the controller generator, but I don't actually respond
+# to actions, except if the first one is 'child', in which case I build the child version of the cell.
+# Also, this can damage the application widget tree, generally one will not want to overwrite it
+# unless nothing has been done to it yet.
 require 'rails_generator/generators/components/controller/controller_generator'
 class EditFrameWidgetsGenerator < ControllerGenerator
-# class EditFrameWidgetsGenerator < Rails::Generator::NamedBase
   def manifest
     record do |m|
       # Check for class naming collisions.
@@ -32,14 +32,7 @@ class EditFrameWidgetsGenerator < ControllerGenerator
       m.file 'filter.html.erb', File.join('app/cells', class_path, 'edit_frame_widgets', "_filter.html.erb")
       m.file 'message.html.erb', File.join('app/cells', class_path, 'edit_frame_widgets', "_message.html.erb")
       m.file 'selected.html.erb', File.join('app/cells', class_path, 'edit_frame_widgets', "_selected.html.erb")
-      
-      # # View template for each state.
-      # actions.each do |action|
-      #   path = File.join('app/cells', class_path, file_name, "#{action}.html.erb")
-      #   m.template 'view.html.erb', path,
-      #     :assigns => { :action => action, :path => path }
-      # end
-      
+            
       # # Functional test for the widget.
       # m.template 'functional_test.rb', File.join('test/functional/', "test_#{file_name}_cell.rb")
     end

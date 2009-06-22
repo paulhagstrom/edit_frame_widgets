@@ -2,8 +2,8 @@
 	<%= form_to_event :state => :_update %>
 		<table>
 			<tr>
-				<td>Field label:</td>
-				<td><%= text_field_tag 'name', @record.name, :size => 25 %></td>
+				<td>Record id:</td>
+				<td><%= text_field_tag 'name', @record.id, :size => 25 %></td>
 			</tr>
 			<tr>
 				<td><%= submit_tag @record.new_record? ? "Add" : "Update" %></td>
@@ -12,7 +12,7 @@
 		</table>
 	</form>
 <% else %>
-	<p>Field label: <%= @record.new_record? ? 'None selected' : @record.name %>
+	<p>Field label: <%= @record.new_record? ? 'None selected' : @record.id %>
 		<%= link_to_event('(Edit)', {:type => :editClick, :id => @record.id, :from_show => 'y'}) %></p>
 <% end %>
 <%= javascript_tag js_emit %>

@@ -1,10 +1,6 @@
 module EditFrameWidgetsTree
-  # Right now, I just include this in application_widget_tree like so:
+  # To use this, put the following in app/models/application_widget_tree.rb
   # include EditFrameWidgetsTree
-  # include EditFrameWidgets
-  # Presumably I could extend Apotomo::WidgetTree somehow so that the inclusion wouldn't be necessary.
-  # I don't know how plugins work.
-  # I don't even really know why I need both includes above, if I do.  But if I have them, it works.
   
   # This embeds a child_frame as a child of the parent_frame, and wires them together
   def embed_frame(parent_frame, child_frame)
@@ -13,7 +9,7 @@ module EditFrameWidgetsTree
     child_detail = child_frame.name + '_detail'
     child_list = child_frame.name + '_list'
     child_selected = child_frame.name + '_selected'
-    child_resource = child_frame.param(:resource)
+    child_resource = child_frame.resource_name
     child_cell_class = child_resource.pluralize.to_sym
 
     # embed the primary child frame under as a child of the parent frame
@@ -38,7 +34,7 @@ module EditFrameWidgetsTree
     opts[:prefix] ||= ''
     base_name = opts[:prefix] + resource
     frame = cell(opts[:cell_sym], :_frame_start, base_name, :resource => resource)
-      # Insert frame, list, detail, and message as children of the frame
+      # Insert filter, list, detail, and message as children of the frame
       frame << message = cell(opts[:cell_sym], :_message_start, base_name + '_message')
       frame << filter = cell(opts[:cell_sym], :_filter_start, base_name + '_filter')
       frame << list = cell(opts[:cell_sym], :_list_start, base_name + '_list')
